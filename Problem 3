@@ -1,0 +1,27 @@
+// A program that will print the letters in a char array in reverse order and shows the size of the array.
+#include <iostream>
+#include <iomanip>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char cstring[50];
+    
+    cout << "\nEnter characters: ";
+    cin.getline(cstring,50);
+    
+    int strSize = strlen(cstring);
+    
+    for (int i = 0; i < strSize * 0.5; ++i)
+    {
+        char ch = cstring[i];
+        cstring[i] = cstring[(strSize-1)-i];
+        cstring[(strSize-1)-i] = ch;
+    }
+    
+    cout << "\nReversed Order: " << cstring;
+    
+    return 0;
+}
